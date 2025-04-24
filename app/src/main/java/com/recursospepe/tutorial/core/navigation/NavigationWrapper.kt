@@ -47,9 +47,13 @@ fun NavigationWrapper(){
         //INDEX
 
         composable(Screen.Index.route){
-            IndexScreen(navigateToHome = {
-                navController.navigate(Screen.Home.route)
-            })
+            IndexScreen(
+                navigateToHome = {
+                    navController.navigate(Screen.Home.route)
+                },
+                navigateToLogin = {
+                    navController.navigate(Screen.Login.route)
+                })
         }
 
         //SOLICITUDES
