@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun CrearCuentaScreen(navigateToHome: () -> Unit){
+fun CrearCuentaScreen(navigateToIndex: () -> Unit){
     Column(modifier = Modifier.
     padding(all = 2.dp).
     fillMaxSize().
@@ -20,7 +20,7 @@ fun CrearCuentaScreen(navigateToHome: () -> Unit){
     {
         Text("Crear cuenta")
 
-        Button( onClick = { navigateToHome() }) {
+        Button( onClick = { navigateToIndex() }) {
             Text("Navegar a Crear cuenta")
         }
     }

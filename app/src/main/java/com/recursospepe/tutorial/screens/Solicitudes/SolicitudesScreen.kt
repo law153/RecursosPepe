@@ -12,7 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun SolicitudesScreen(navigateToHome: () -> Unit){
+fun SolicitudesScreen(navigateToIndex: () -> Unit){
     Column(modifier = Modifier.
     padding(all = 2.dp).
     fillMaxSize().
@@ -20,8 +20,8 @@ fun SolicitudesScreen(navigateToHome: () -> Unit){
     {
         Text("Solicitudes")
 
-        Button( onClick = { navigateToHome() }) {
-            Text("Navegar a Solicitudes")
+        Button( onClick = { navigateToIndex() }) {
+            Text("Navegar a Index")
         }
     }
 }

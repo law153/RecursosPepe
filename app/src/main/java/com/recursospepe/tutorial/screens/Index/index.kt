@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun IndexScreen(navigateToHome: () -> Unit, navigateToLogin: () -> Unit){
+fun IndexScreen(navigateToLogin: () -> Unit){
     Column(modifier = Modifier.
     fillMaxSize().
 
@@ -104,9 +104,6 @@ fun IndexScreen(navigateToHome: () -> Unit, navigateToLogin: () -> Unit){
         Spacer(modifier = Modifier.height(10.dp))
         //NavBar
         Row {
-            Button( onClick = { navigateToHome() }, ) {
-                Text("Navegar a Home")
-            }
             Button( onClick = { navigateToLogin() }, ) {
                 Text("Cerrar sesión")
             }
