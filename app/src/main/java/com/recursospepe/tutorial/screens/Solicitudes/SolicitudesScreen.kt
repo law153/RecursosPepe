@@ -1,4 +1,4 @@
-package com.recursospepe.tutorial
+package com.recursospepe.tutorial.screens.Solicitudes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column

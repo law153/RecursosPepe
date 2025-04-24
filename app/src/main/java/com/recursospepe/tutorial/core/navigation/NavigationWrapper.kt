@@ -5,9 +5,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.recursospepe.tutorial.CrearCuentaScreen
-import com.recursospepe.tutorial.HomeScreen
-import com.recursospepe.tutorial.IndexScreen
-import com.recursospepe.tutorial.SolicitudesScreen
+import com.recursospepe.tutorial.screens.Index.HomeScreen
+import com.recursospepe.tutorial.screens.Index.IndexScreen
+import com.recursospepe.tutorial.screens.Index.LoginScreen
+import com.recursospepe.tutorial.screens.Solicitudes.SolicitudesScreen
 
 
 @Composable
@@ -16,8 +17,18 @@ fun NavigationWrapper(){
 
     NavHost(
         navController = navController,
-        startDestination = Screen.Home.route.toString()
+        startDestination = Screen.Login.route.toString()
     ){
+
+        //LOGIN
+
+        composable(Screen.Login.route) {
+            LoginScreen(navigateToIndex = {
+                navController.navigate(Screen.Index.route)
+            })
+        }
+
+        //HOME
 
         composable(Screen.Home.route) {
             HomeScreen(
@@ -33,23 +44,21 @@ fun NavigationWrapper(){
             )
         }
 
+        //INDEX
+
         composable(Screen.Index.route){
             IndexScreen(navigateToHome = {
                 navController.navigate(Screen.Home.route)
             })
         }
 
+        //SOLICITUDES
         composable(Screen.Solicutdes.route){
             SolicitudesScreen(navigateToHome = {
                 navController.navigate(Screen.Home.route)
             })
         }
 
-        composable(Screen.Solicutdes.route){
-            SolicitudesScreen(navigateToHome = {
-                navController.navigate(Screen.Home.route)
-            })
-        }
         ///Crear cuenta
         composable(Screen.CrearCuenta.route){
             CrearCuentaScreen(navigateToHome = {
