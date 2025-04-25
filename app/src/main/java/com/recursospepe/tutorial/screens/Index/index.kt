@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun IndexScreen(navigateToLogin: () -> Unit){
+fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
     Column(modifier = Modifier.
     fillMaxSize().
 
@@ -45,14 +45,16 @@ fun IndexScreen(navigateToLogin: () -> Unit){
             Text(
                 text = "Foto",
                 fontSize = 25.sp,
-                lineHeight = 50.sp)
+                lineHeight = 50.sp,
+                color = Color.Black)
         }
         //Nombre
         Row {
             Text(
                 text = "Nombre",
                 fontSize = 25.sp,
-                lineHeight = 50.sp)
+                lineHeight = 50.sp,
+                color = Color.Black)
         }
         //Sueldo
         Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
@@ -60,7 +62,8 @@ fun IndexScreen(navigateToLogin: () -> Unit){
                 text = "$ Mucha plata",
                 fontSize = 25.sp,
                 lineHeight = 50.sp,
-                fontWeight = Bold)
+                fontWeight = Bold,
+                color = Color.Black)
 
 
         }
@@ -68,7 +71,8 @@ fun IndexScreen(navigateToLogin: () -> Unit){
             Text(
                 text = "Fecha Facturación:",
                 fontSize = 15.sp,
-                lineHeight = 50.sp)
+                lineHeight = 50.sp,
+                color = Color.Black)
         }
         Spacer(modifier = Modifier.height(10.dp))
         //Documentos cargados
@@ -77,14 +81,16 @@ fun IndexScreen(navigateToLogin: () -> Unit){
                 text = "Tus documentos son:",
                 fontSize = 25.sp,
                 lineHeight = 50.sp,
-                fontWeight = Bold)
+                fontWeight = Bold,
+                color = Color.Black)
 
         }
         Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
             Text(
                 text = "Documento 1",
                 fontSize = 15.sp,
-                lineHeight = 50.sp,)
+                lineHeight = 50.sp,
+                color = Color.Black)
         }
         Spacer(modifier = Modifier.height(10.dp))
         //Notificaciones recientes
@@ -93,19 +99,27 @@ fun IndexScreen(navigateToLogin: () -> Unit){
                 text = "Tus notis son:",
                 fontSize = 25.sp,
                 lineHeight = 50.sp,
-                fontWeight = Bold)
+                fontWeight = Bold,
+                color = Color.Black)
         }
         Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
             Text(
                 text = "Noti 1",
                 fontSize = 15.sp,
-                lineHeight = 50.sp)
+                lineHeight = 50.sp,
+                color = Color.Black)
         }
         Spacer(modifier = Modifier.height(10.dp))
         //NavBar
         Row {
             Button( onClick = { navigateToLogin() }, ) {
                 Text("Cerrar sesión")
+            }
+        }
+
+        Row {
+            Button( onClick = { navigateToCrearCuenta() }, ) {
+                Text("Crear Cuenta")
             }
         }
 

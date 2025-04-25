@@ -73,6 +73,8 @@ fun NavigationWrapper(){
                 IndexScreen(
                     navigateToLogin = {
                         navController.navigate(Screen.Login.route)
+                    }, navigateToCrearCuenta = {
+                        navController.navigate(Screen.CrearCuenta.route)
                     })
             }
 
