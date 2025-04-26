@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -27,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.text.TextStyle
 
 @Composable
 fun CrearCuentaScreen(navigateToIndex: () -> Unit) {
@@ -76,56 +78,56 @@ fun CrearCuentaScreen(navigateToIndex: () -> Unit) {
             OutlinedTextField(
                 value = rut,
                 onValueChange = { rut = it },
-                label = { Text("Rut:") },
-                singleLine = true
-            )
-
-            OutlinedTextField(
-                value = dvrut,
-                onValueChange = { dvrut = it },
-                label = { Text("Digito V:") },
-                singleLine = true
+                label = { Text("Rut:", color = Color.DarkGray) },
+                singleLine = true,
+                modifier = Modifier.fillMaxWidth(),
+                textStyle = TextStyle(color = Color.DarkGray)
             )
         }
         //Nombre
         OutlinedTextField(
             value = nombre,
             onValueChange = { nombre = it },
-            label = { Text("Nombre:") },
+            label = { Text("Nombre:", color = Color.DarkGray) },
             singleLine = true,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            textStyle = TextStyle(color = Color.DarkGray)
         )
         //Apellidos
         OutlinedTextField(
             value = apellidos,
             onValueChange = { apellidos = it },
-            label = { Text("Apellidos:") },
+            label = { Text("Apellidos:", color = Color.DarkGray) },
             singleLine = true,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            textStyle = TextStyle(color = Color.DarkGray)
         )
         //Telefono
         OutlinedTextField(
             value = telefono,
             onValueChange = { telefono = it },
-            label = { Text("Telefono:") },
+            label = { Text("Telefono:", color = Color.DarkGray) },
             singleLine = true,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            textStyle = TextStyle(color = Color.DarkGray)
         )
         //Dirección
         OutlinedTextField(
             value = direccion,
             onValueChange = { direccion = it },
-            label = { Text("Dirección:") },
+            label = { Text("Dirección:", color = Color.DarkGray) },
             singleLine = true,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            textStyle = TextStyle(color = Color.DarkGray)
         )
         //Cargo
         OutlinedTextField(
             value = cargo,
             onValueChange = { cargo = it },
-            label = { Text("Cargo:") },
+            label = { Text("Cargo:", color = Color.DarkGray) },
             singleLine = true,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            textStyle = TextStyle(color = Color.DarkGray)
         )
 
         Row {
