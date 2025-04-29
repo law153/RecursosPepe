@@ -1,5 +1,6 @@
 package com.recursospepe.tutorial.core.navigation
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -20,6 +21,7 @@ import com.recursospepe.tutorial.screens.Index.LoginScreen
 import com.recursospepe.tutorial.screens.Solicitudes.SolicitudesScreen
 
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun NavigationWrapper(){
     var selectedIndex by remember { mutableIntStateOf(0) }
@@ -80,9 +82,7 @@ fun NavigationWrapper(){
 
             //SOLICITUDES
             composable(Screen.Solicutdes.route) {
-                SolicitudesScreen(navigateToIndex = {
-                    navController.navigate(Screen.Index.route)
-                })
+                SolicitudesScreen()
             }
 
             ///Crear cuenta
