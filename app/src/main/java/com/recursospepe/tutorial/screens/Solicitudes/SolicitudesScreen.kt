@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.Button
@@ -20,15 +22,25 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.recursospepe.tutorial.core.navigation.CustomSearchBar
+import com.recursospepe.tutorial.models.SolicitudDataClass
+import com.recursospepe.tutorial.models.SolicitudItem
 
 @Preview
 @Composable
 fun SolicitudesScreen(){
+    var searchText by remember { mutableStateOf("") }
+    var showSearchBar by remember { mutableStateOf(true) }
+
     Column(modifier = Modifier.
             padding(all = 2.dp).
             fillMaxSize().
@@ -36,10 +48,10 @@ fun SolicitudesScreen(){
             windowInsetsPadding(WindowInsets.statusBars)
     )
     {
-        Spacer(modifier = Modifier.height(20.dp))
 
         Row(modifier = Modifier.
-                    fillMaxWidth(),
+                    fillMaxWidth().
+                    padding(top = 20.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         )
@@ -48,8 +60,32 @@ fun SolicitudesScreen(){
                 fontSize = 20.sp,
                 modifier = Modifier.padding(all = 8.dp))
 
-            
         }
 
+        CustomSearchBar(
+            isVisible = showSearchBar,
+            query = searchText,
+            onQueryChange = { searchText = it },
+            placeholder = "Buscar documentos..."
+        )
+
+        val solicitudes = listOf(
+            SolicitudDataClass("Solicitud de Certificado", "Necesito un certificado de residencia para trámites bancarios.", "En revisión", "22-04-2025"),
+            SolicitudDataClass("Renovación de contrato", "Se solicita la renovación del contrato de arriendo por 12 meses más.", "Aprobada", "20-04-2025"),
+            SolicitudDataClass("Solicitud de vacaciones", "Solicito vacaciones desde el 10 al 25 de mayo.", "Rechazada", "18-04-2025")
+        )
+        SolicitudesList(solicitudes)
+
+    }
+}
+
+
+
+@Composable
+fun SolicitudesList(solicitudes: List<SolicitudDataClass>) {
+    LazyColumn {
+        items(solicitudes) { solicitud ->
+            SolicitudItem(solicitud)
+        }
     }
 }
