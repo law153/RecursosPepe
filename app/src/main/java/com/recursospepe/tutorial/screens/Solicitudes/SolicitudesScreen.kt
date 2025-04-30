@@ -28,7 +28,6 @@ import com.recursospepe.tutorial.core.navigation.CustomSearchBar
 import com.recursospepe.tutorial.models.SolicitudDataClass
 import com.recursospepe.tutorial.models.SolicitudItem
 
-@Preview
 @Composable
 fun SolicitudesScreen(navigateToMostrarSolicitudScreen: () -> Unit){
     var searchText by remember { mutableStateOf("") }
@@ -67,7 +66,7 @@ fun SolicitudesScreen(navigateToMostrarSolicitudScreen: () -> Unit){
             SolicitudDataClass("Renovación de contrato", "Se solicita la renovación del contrato de arriendo por 12 meses más.", "Aprobada", "20-04-2025"),
             SolicitudDataClass("Solicitud de vacaciones", "Solicito vacaciones desde el 10 al 25 de mayo.", "Rechazada", "18-04-2025")
         )
-        SolicitudesList(solicitudes)
+        SolicitudesList(solicitudes, navigateToMostrarSolicitudScreen)
 
     }
 }
@@ -75,10 +74,10 @@ fun SolicitudesScreen(navigateToMostrarSolicitudScreen: () -> Unit){
 
 
 @Composable
-fun SolicitudesList(solicitudes: List<SolicitudDataClass>) {
+fun SolicitudesList(solicitudes: List<SolicitudDataClass>, navigateToMostrarSolicitudScreen: () -> Unit) {
     LazyColumn {
         items(solicitudes) { solicitud ->
-            SolicitudItem(solicitud)
+            SolicitudItem(solicitud, navigateToMostrarSolicitudScreen)
         }
     }
 }

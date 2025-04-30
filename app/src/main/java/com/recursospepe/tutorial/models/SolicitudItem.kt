@@ -18,12 +18,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun SolicitudItem(solicitud: SolicitudDataClass) {
+fun SolicitudItem(solicitud: SolicitudDataClass, navigateToMostrarSolicitud: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp),
-        elevation = CardDefaults.cardElevation(4.dp)
+        elevation = CardDefaults.cardElevation(4.dp),
+        onClick = { navigateToMostrarSolicitud() }
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
             Text(text = solicitud.asunto, style = MaterialTheme.typography.titleMedium)

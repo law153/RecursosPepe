@@ -113,7 +113,7 @@ fun NavigationWrapper(){
             //MostrarSolicitud
 
             composable(Screen.MostrarSolicitud.route){
-                MostrarSolicitudScreen()
+                MostrarSolicitudScreen(navController = navController)
             }
 
         }
