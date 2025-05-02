@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,6 +27,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import com.recursospepe.tutorial.models.SolicitudDataClass
+import com.recursospepe.tutorial.models.SolicitudItem
 
 
 @Composable
@@ -92,40 +96,86 @@ fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
                 color = Color.Black)
         }
         Spacer(modifier = Modifier.height(10.dp))
-        //Documentos cargados
-        Row (modifier = Modifier.background(Color.LightGray) .fillMaxWidth()){
-            Text(
-                text = "Tus documentos son:",
-                fontSize = 25.sp,
-                lineHeight = 50.sp,
-                fontWeight = Bold,
-                color = Color.Black)
+        //Interfaz user
+        if(rol == 0){
+            //Documentos cargados
+            Row (modifier = Modifier.background(Color.LightGray) .fillMaxWidth()){
+                Text(
+                    text = "Tus documentos son:",
+                    fontSize = 25.sp,
+                    lineHeight = 50.sp,
+                    fontWeight = Bold,
+                    color = Color.Black)
+
+            }
+            Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
+                Text(
+                    text = "Documento 1",
+                    fontSize = 15.sp,
+                    lineHeight = 50.sp,
+                    color = Color.Black)
+            }
+            Spacer(modifier = Modifier.height(10.dp))
+            //Notificaciones recientes
+            Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
+                Text(
+                    text = "Tus notis son:",
+                    fontSize = 25.sp,
+                    lineHeight = 50.sp,
+                    fontWeight = Bold,
+                    color = Color.Black)
+            }
+            Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
+                Text(
+                    text = "Noti 1",
+                    fontSize = 15.sp,
+                    lineHeight = 50.sp,
+                    color = Color.Black)
+            }
+            Spacer(modifier = Modifier.height(10.dp))
+        }
+
+        //Interfaz admin
+        if(rol == 1){
+            //Documentos pendientes
+            Row (modifier = Modifier.background(Color.LightGray) .fillMaxWidth()){
+                Text(
+                    text = "Documentos pendientes:",
+                    fontSize = 25.sp,
+                    lineHeight = 50.sp,
+                    fontWeight = Bold,
+                    color = Color.Black)
+
+            }
+            Row(modifier = Modifier.background(Color.Yellow) .fillMaxWidth()) {
+                Text(
+                    text = "Documento 1",
+                    fontSize = 15.sp,
+                    lineHeight = 50.sp,
+                    color = Color.Black,)
+            }
+            Row(modifier = Modifier.background(Color.Red) .fillMaxWidth()) {
+                Text(
+                    text = "Documento 2",
+                    fontSize = 15.sp,
+                    lineHeight = 50.sp,
+                    color = Color.Black,)
+            }
+            //Documentos realizados
+            Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
+                Text(
+                    text = "Documentos realizados:",
+                    fontSize = 25.sp,
+                    lineHeight = 50.sp,
+                    fontWeight = Bold,
+                    color = Color.Black)
+            }
 
         }
-        Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
-            Text(
-                text = "Documento 1",
-                fontSize = 15.sp,
-                lineHeight = 50.sp,
-                color = Color.Black)
-        }
+
         Spacer(modifier = Modifier.height(10.dp))
-        //Notificaciones recientes
-        Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
-            Text(
-                text = "Tus notis son:",
-                fontSize = 25.sp,
-                lineHeight = 50.sp,
-                fontWeight = Bold,
-                color = Color.Black)
-        }
-        Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
-            Text(
-                text = "Noti 1",
-                fontSize = 15.sp,
-                lineHeight = 50.sp,
-                color = Color.Black)
-        }
+
+
         Spacer(modifier = Modifier.height(10.dp))
         //NavBar
         Row {
