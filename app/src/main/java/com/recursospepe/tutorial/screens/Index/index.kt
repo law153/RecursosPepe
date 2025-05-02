@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -21,9 +22,15 @@ import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+
 
 @Composable
 fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
+    var rol by remember { mutableStateOf(0) }
+
     Column(modifier = Modifier.
     fillMaxSize().
 
@@ -55,6 +62,16 @@ fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
                 fontSize = 25.sp,
                 lineHeight = 50.sp,
                 color = Color.Black)
+        }
+
+        //Rol(temporal)
+        Row {
+            Text(
+                text = if (rol == 0) "Uste es user" else "Uste es admin",
+                fontSize = 25.sp,
+                lineHeight = 50.sp,
+                color = Color.Black
+            )
         }
         //Sueldo
         Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
@@ -120,6 +137,14 @@ fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
         Row {
             Button( onClick = { navigateToCrearCuenta() }, ) {
                 Text("Crear Cuenta")
+            }
+        }
+
+        Row {
+            Button(onClick = {
+                rol = if (rol == 0) 1 else 0
+            }) {
+                Text("Cambiar rol")
             }
         }
 
