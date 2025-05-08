@@ -21,29 +21,30 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.recursospepe.tutorial.core.navigation.CustomSearchBar
 import com.recursospepe.tutorial.models.SolicitudDataClass
 import com.recursospepe.tutorial.models.SolicitudItem
+import com.recursospepe.tutorial.models.BotonFlotante
 
 @Composable
-fun SolicitudesScreen(navigateToMostrarSolicitudScreen: () -> Unit){
+fun SolicitudesScreen(navigateToMostrarSolicitudScreen: () -> Unit,
+                      navigateToCrearSolicitudScreen: () -> Unit){
     var searchText by remember { mutableStateOf("") }
     var showSearchBar by remember { mutableStateOf(true) }
 
-    Column(modifier = Modifier.
-            padding(all = 2.dp).
-            fillMaxSize().
-            background(MaterialTheme.colorScheme.background).
-            windowInsetsPadding(WindowInsets.statusBars)
+    Column(modifier = Modifier
+        .padding(all = 2.dp)
+        .fillMaxSize()
+        .background(MaterialTheme.colorScheme.background)
+        .windowInsetsPadding(WindowInsets.statusBars)
     )
     {
 
-        Row(modifier = Modifier.
-                    fillMaxWidth().
-                    padding(top = 20.dp),
+        Row(modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 20.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         )
@@ -52,6 +53,10 @@ fun SolicitudesScreen(navigateToMostrarSolicitudScreen: () -> Unit){
                 fontSize = 20.sp,
                 modifier = Modifier.padding(all = 8.dp))
 
+
+            BotonFlotante{
+                navigateToCrearSolicitudScreen()
+            }
         }
 
         CustomSearchBar(
@@ -67,7 +72,6 @@ fun SolicitudesScreen(navigateToMostrarSolicitudScreen: () -> Unit){
             SolicitudDataClass("Solicitud de vacaciones", "Solicito vacaciones desde el 10 al 25 de mayo.", "Rechazada", "18-04-2025")
         )
         SolicitudesList(solicitudes, navigateToMostrarSolicitudScreen)
-
     }
 }
 

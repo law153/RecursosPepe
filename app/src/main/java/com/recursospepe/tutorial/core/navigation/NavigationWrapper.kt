@@ -18,6 +18,7 @@ import com.recursospepe.tutorial.screens.Configuracion.ConfiguracionScreen
 import com.recursospepe.tutorial.screens.Documentos.DocumentosScreen
 import com.recursospepe.tutorial.screens.Index.IndexScreen
 import com.recursospepe.tutorial.screens.Index.LoginScreen
+import com.recursospepe.tutorial.screens.Solicitudes.CrearSolicitudScreen
 import com.recursospepe.tutorial.screens.Solicitudes.MostrarSolicitudScreen
 import com.recursospepe.tutorial.screens.Solicitudes.SolicitudesScreen
 
@@ -106,8 +107,16 @@ fun NavigationWrapper(){
             //SOLICITUDES
             composable(Screen.Solicutdes.route) {
                 SolicitudesScreen(navigateToMostrarSolicitudScreen = {
-                    navController.navigate(Screen.MostrarSolicitud.route)
-                })
+                                    navController.navigate(Screen.MostrarSolicitud.route)
+                                },
+                                navigateToCrearSolicitudScreen = {
+                                    navController.navigate(Screen.CrearSolicitud.route)
+                                },
+                    )
+            }
+
+            composable(Screen.CrearSolicitud.route){
+                CrearSolicitudScreen(navController = navController)
             }
 
             //MostrarSolicitud
