@@ -13,6 +13,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 
@@ -44,7 +45,13 @@ fun DocumentoItem(documento: DocumentoDataClass, navigateToMostrarDocumento: () 
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = documento.file,
+                    text = documento.prioridad,
+                    color = when (documento.prioridad) {
+                        "Alta" -> Color.Red
+                        "Media" -> Color.Yellow
+                        "Leve" -> Color.Green
+                        else -> Color.Gray
+                    },
                     style = MaterialTheme.typography.labelMedium
                 )
                 Text(

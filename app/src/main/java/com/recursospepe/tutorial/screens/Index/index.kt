@@ -27,8 +27,11 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import com.recursospepe.tutorial.models.DocumentoDataClass
+import com.recursospepe.tutorial.models.DocumentoItem
 import com.recursospepe.tutorial.models.SolicitudDataClass
 import com.recursospepe.tutorial.models.SolicitudItem
+import com.recursospepe.tutorial.screens.Solicitudes.SolicitudesList
 
 
 @Composable
@@ -147,20 +150,10 @@ fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
                     color = Color.Black)
 
             }
-            Row(modifier = Modifier.background(Color.Yellow) .fillMaxWidth()) {
-                Text(
-                    text = "Documento 1",
-                    fontSize = 15.sp,
-                    lineHeight = 50.sp,
-                    color = Color.Black,)
-            }
-            Row(modifier = Modifier.background(Color.Red) .fillMaxWidth()) {
-                Text(
-                    text = "Documento 2",
-                    fontSize = 15.sp,
-                    lineHeight = 50.sp,
-                    color = Color.Black,)
-            }
+            val documentos1 = listOf(
+                DocumentoDataClass(2, "Vacaciones", "07-05-2025", "Toma de vacaciones el proximo mes", "vacaciones.pdf", 2, 2, "Media")
+            )
+            DocumentosList(documentos1, navigateToCrearCuenta)
             //Documentos realizados
             Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
                 Text(
@@ -170,6 +163,10 @@ fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
                     fontWeight = Bold,
                     color = Color.Black)
             }
+            val documentos2 = listOf(
+                DocumentoDataClass(3, "Renuncia", "09-05-2025", "Anuncio de renuncia la proxima semana", "renuncia.pdf", 1, 3, "Alta")
+            )
+            DocumentosList(documentos2, navigateToCrearCuenta)
 
         }
 
@@ -199,5 +196,14 @@ fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
         }
 
 
+    }
+}
+
+@Composable
+fun DocumentosList(documentos: List<DocumentoDataClass>, navigateToMostrarDocumentoScreen: () -> Unit) {
+    LazyColumn {
+        items(documentos) { documento ->
+            DocumentoItem(documento, navigateToMostrarDocumentoScreen)
+        }
     }
 }
