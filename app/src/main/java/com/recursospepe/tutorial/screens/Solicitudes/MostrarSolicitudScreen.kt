@@ -16,9 +16,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.recursospepe.tutorial.models.CustomCard
-import com.recursospepe.tutorial.models.PerfilEncargadoItem
-import com.recursospepe.tutorial.models.TopBarConBackButton
+import com.recursospepe.tutorial.Funciones.CustomCard
+import com.recursospepe.tutorial.Funciones.PerfilEncargadoItem
+import com.recursospepe.tutorial.Funciones.TopBarConBackButton
 
 @Composable
 fun MostrarSolicitudScreen(navController: NavController){

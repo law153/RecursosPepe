@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.sp
 import com.recursospepe.tutorial.core.navigation.CustomSearchBar
 import com.recursospepe.tutorial.models.SolicitudDataClass
 import com.recursospepe.tutorial.models.SolicitudItem
-import com.recursospepe.tutorial.models.BotonFlotante
+import com.recursospepe.tutorial.Funciones.BotonFlotante
 
 @Composable
 fun SolicitudesScreen(navigateToMostrarSolicitudScreen: () -> Unit,

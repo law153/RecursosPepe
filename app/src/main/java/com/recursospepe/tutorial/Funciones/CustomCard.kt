@@ -1,4 +1,4 @@
-package com.recursospepe.tutorial.models
+package com.recursospepe.tutorial.Funciones
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

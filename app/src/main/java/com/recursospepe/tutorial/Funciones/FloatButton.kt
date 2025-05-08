@@ -1,4 +1,4 @@
-package com.recursospepe.tutorial.models
+package com.recursospepe.tutorial.Funciones
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
