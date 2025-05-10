@@ -55,6 +55,10 @@ fun DocumentoItem(documento: DocumentoDataClass, navigateToMostrarDocumento: () 
                     style = MaterialTheme.typography.labelMedium
                 )
                 Text(
+                    text = documento.tipo,
+                    style = MaterialTheme.typography.labelMedium
+                )
+                Text(
                     text = documento.fechaSubidaDoc,
                     style = MaterialTheme.typography.labelMedium
                 )
