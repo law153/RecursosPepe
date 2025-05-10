@@ -70,7 +70,7 @@ fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit, 
                 lineHeight = 50.sp,
                 color = Color.Black)
         }
-        
+
         //Sueldo
         Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
             Text(
