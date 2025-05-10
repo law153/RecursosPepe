@@ -79,6 +79,8 @@ fun NavigationWrapper(){
                         navController.navigate(Screen.Login.route)
                     }, navigateToCrearCuenta = {
                         navController.navigate(Screen.CrearCuenta.route)
+                    }, navigateToDocumentos = {
+                        navController.navigate(Screen.Documentos.route)
                     })
             }
 
@@ -94,7 +96,7 @@ fun NavigationWrapper(){
             //Documentos
 
             composable(Screen.Documentos.route) {
-                DocumentosScreen()
+                DocumentosScreen( {} )
             }
 
 

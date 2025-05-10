@@ -35,7 +35,7 @@ import com.recursospepe.tutorial.screens.Solicitudes.SolicitudesList
 
 
 @Composable
-fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
+fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit, navigateToDocumentos: () -> Unit ){
     var rol by remember { mutableStateOf(0) }
 
     Column(modifier = Modifier.
@@ -70,16 +70,7 @@ fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
                 lineHeight = 50.sp,
                 color = Color.Black)
         }
-
-        //Rol(temporal)
-        Row {
-            Text(
-                text = if (rol == 0) "Uste es user" else "Uste es admin",
-                fontSize = 25.sp,
-                lineHeight = 50.sp,
-                color = Color.Black
-            )
-        }
+        
         //Sueldo
         Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
             Text(
@@ -153,7 +144,7 @@ fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
             val documentos1 = listOf(
                 DocumentoDataClass(2, "Vacaciones", "07-05-2025", "Toma de vacaciones el proximo mes", "vacaciones.pdf", 2, 2, "Media")
             )
-            DocumentosList(documentos1, navigateToCrearCuenta)
+            DocumentosList(documentos1, navigateToDocumentos)
             //Documentos realizados
             Row(modifier = Modifier.background(Color.LightGray) .fillMaxWidth()) {
                 Text(
@@ -166,7 +157,7 @@ fun IndexScreen(navigateToLogin: () -> Unit, navigateToCrearCuenta: () -> Unit){
             val documentos2 = listOf(
                 DocumentoDataClass(3, "Renuncia", "09-05-2025", "Anuncio de renuncia la proxima semana", "renuncia.pdf", 1, 3, "Alta")
             )
-            DocumentosList(documentos2, navigateToCrearCuenta)
+            DocumentosList(documentos2, navigateToDocumentos)
 
         }
 
