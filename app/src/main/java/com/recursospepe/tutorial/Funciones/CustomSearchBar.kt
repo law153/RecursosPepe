@@ -1,4 +1,4 @@
-package com.recursospepe.tutorial.core.navigation
+package com.recursospepe.tutorial.Funciones
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically

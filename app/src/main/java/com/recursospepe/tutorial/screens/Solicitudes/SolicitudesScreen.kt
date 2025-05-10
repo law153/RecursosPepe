@@ -23,7 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.recursospepe.tutorial.core.navigation.CustomSearchBar
+import com.recursospepe.tutorial.Funciones.CustomSearchBar
 import com.recursospepe.tutorial.models.SolicitudDataClass
 import com.recursospepe.tutorial.models.SolicitudItem
 import com.recursospepe.tutorial.Funciones.BotonFlotante
