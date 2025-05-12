@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -26,34 +27,52 @@ fun UsuarioItem(usuario: UsuarioDataClass) {
             .padding(8.dp),
         elevation = CardDefaults.cardElevation(4.dp)
     ) {
-        Column(modifier = Modifier.padding(12.dp)) {
-            Text(text = usuario.cargo, style = MaterialTheme.typography.bodyMedium)
-
-            Spacer(modifier = Modifier.run { height(4.dp) })
-            Row{
-                Text(
-                    text = usuario.nombreUsuario,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis,
-                    style = MaterialTheme.typography.titleMedium
-                )
-
+        //Contenedor padre
+        Row(modifier = Modifier
+            .fillMaxWidth()){
+            Column(
+                modifier = Modifier
+                    .weight(0.2f)
+                    .fillMaxHeight(),
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(text = usuario.fotoUsario)
             }
 
+            //Columna derecha
+            Column(modifier = Modifier.padding(12.dp)
+                .weight(0.8f)
+                .fillMaxHeight(),
+                verticalArrangement = Arrangement.Center) {
+                Text(text = usuario.cargo, style = MaterialTheme.typography.bodyMedium)
 
-            Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.run { height(4.dp) })
+                Row{
+                    Text(
+                        text = usuario.nombreUsuario + " " + usuario.apellidos,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis,
+                        style = MaterialTheme.typography.titleMedium
+                    )
 
-            Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier.fillMaxWidth()
-            ) {
+                }
 
-                Text(
-                    text = "Desde: "+usuario.creacionCuenta,
-                    style = MaterialTheme.typography.labelMedium
-                )
 
+                Spacer(modifier = Modifier.height(8.dp))
+
+                Row(
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+
+                    Text(
+                        text = "Desde: "+usuario.creacionCuenta,
+                        style = MaterialTheme.typography.labelMedium
+                    )
+
+                }
             }
         }
+
     }
 }

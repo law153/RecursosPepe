@@ -16,6 +16,7 @@ import androidx.navigation.compose.rememberNavController
 import com.recursospepe.tutorial.CrearCuentaScreen
 import com.recursospepe.tutorial.screens.Configuracion.ConfiguracionScreen
 import com.recursospepe.tutorial.screens.Documentos.DocumentosScreen
+import com.recursospepe.tutorial.screens.Documentos.MostrarDocumentoScreen
 import com.recursospepe.tutorial.screens.Index.IndexScreen
 import com.recursospepe.tutorial.screens.Index.LoginScreen
 import com.recursospepe.tutorial.screens.Solicitudes.CrearSolicitudScreen
@@ -96,7 +97,12 @@ fun NavigationWrapper(){
             //Documentos
 
             composable(Screen.Documentos.route) {
-                DocumentosScreen( {} )
+                DocumentosScreen( navigatoToMostrarDocumento = {
+                    navController.navigate(Screen.MostrarDocumento.route)
+                } )
+            }
+            composable(Screen.MostrarDocumento.route) {
+                MostrarDocumentoScreen()
             }
 
 

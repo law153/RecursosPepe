@@ -17,12 +17,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.recursospepe.tutorial.Funciones.BotonDescargar
-import com.recursospepe.tutorial.Funciones.BotonFlotante
 import com.recursospepe.tutorial.models.DocumentoDataClass
 import com.recursospepe.tutorial.models.DocumentoItem
 import com.recursospepe.tutorial.models.UsuarioDataClass
@@ -30,7 +26,7 @@ import com.recursospepe.tutorial.models.UsuarioItem
 import com.recursospepe.tutorial.screens.Index.DocumentosList
 
 @Composable
-fun DocumentosScreen(navigatoToMostrarDocumento: () -> Unit){
+fun MostrarDocumentoScreen(){
     Column(modifier = Modifier.
     fillMaxSize().
     background(MaterialTheme.colorScheme.background).
@@ -38,10 +34,7 @@ fun DocumentosScreen(navigatoToMostrarDocumento: () -> Unit){
     windowInsetsPadding(WindowInsets.statusBars),
         horizontalAlignment = Alignment.CenterHorizontally)
     {
-        val usuario = listOf(
-            UsuarioDataClass(1, "Tulio", "Triviño", "tulio@gmail.com", "123aaa", "Los Camarones 3087", 12345678, "Operador de grua", "12/07/2024", "foto", 1)
-        )
-        UsuarioList(usuario)
+
         Row(modifier = Modifier
             .fillMaxWidth()
             .padding(top = 20.dp),
@@ -49,16 +42,14 @@ fun DocumentosScreen(navigatoToMostrarDocumento: () -> Unit){
             horizontalArrangement = Arrangement.Center
         )
         {
-            Text(text = "Tus Documentos",
+            Text(text = "Texto de ejemplo",
                 fontSize = 20.sp,
                 modifier = Modifier.padding(all = 8.dp))
         }
-        val documentos = listOf(
-            DocumentoDataClass(1, "Licensia", "06-05-2025", "Licensia medica de Tulio", "licensia.pdf", 1, 2, "Leve"),
-            DocumentoDataClass(2, "Vacaciones", "07-05-2025", "Toma de vacaciones el proximo mes", "vacaciones.pdf", 2, 2, "Media"),
-            DocumentoDataClass(3, "Renuncia", "09-05-2025", "Anuncio de renuncia de Bodoque", "renuncia.pdf", 1, 3, "Alta")
+        val usuario = listOf(
+            UsuarioDataClass(1, "Tulio", "Triviño", "tulio@gmail.com", "123aaa", "Los Camarones 3087", 12345678, "Operador de grua", "12/07/2024", "foto", 1)
         )
-        DocumentosList(documentos, navigatoToMostrarDocumento )
+        UsuarioList(usuario)
 
 
 
@@ -66,10 +57,10 @@ fun DocumentosScreen(navigatoToMostrarDocumento: () -> Unit){
 }
 
 @Composable
-fun DocumentosList(documentos: List<DocumentoDataClass>, navigateToMostrarDocumentoScreen: () -> Unit) {
+fun UsuarioList(usuario: List<UsuarioDataClass>) {
     LazyColumn {
-        items(documentos) { documento ->
-            DocumentoItem(documento, navigateToMostrarDocumentoScreen)
+        items(usuario) { usuario ->
+            UsuarioItem(usuario)
         }
     }
 }
