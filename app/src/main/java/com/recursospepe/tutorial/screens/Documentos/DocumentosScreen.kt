@@ -21,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.recursospepe.tutorial.Funciones.BotonDescargar
 import com.recursospepe.tutorial.Funciones.BotonFlotante
 import com.recursospepe.tutorial.models.DocumentoDataClass
 import com.recursospepe.tutorial.models.DocumentoItem
@@ -53,6 +54,8 @@ fun DocumentosScreen(navigatoToMostrarDocumento: () -> Unit){
             DocumentoDataClass(3, "Renuncia", "09-05-2025", "Anuncio de renuncia de Bodoque", "renuncia.pdf", 1, 3, "Alta")
         )
         DocumentosList(documentos, navigateToMostrarDocumentoScreen = { } )
+
+
 
     }
 }

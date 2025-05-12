@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.recursospepe.tutorial.Funciones.BotonDescargar
 
 @Composable
 fun DocumentoItem(documento: DocumentoDataClass, navigateToMostrarDocumento: () -> Unit) {
@@ -30,13 +31,19 @@ fun DocumentoItem(documento: DocumentoDataClass, navigateToMostrarDocumento: () 
             Text(text = documento.tipo, style = MaterialTheme.typography.titleMedium)
 
             Spacer(modifier = Modifier.run { height(4.dp) })
+            Row{
+                Text(
+                    text = documento.descripcionDoc,
+                    maxLines = 2,
+                    overflow = TextOverflow.Ellipsis,
+                    style = MaterialTheme.typography.bodyMedium
+                )
 
-            Text(
-                text = documento.descripcionDoc,
-                maxLines = 2,
-                overflow = TextOverflow.Ellipsis,
-                style = MaterialTheme.typography.bodyMedium
-            )
+                Spacer(modifier = Modifier.weight(1f))
+
+                BotonDescargar { {} }
+            }
+
 
             Spacer(modifier = Modifier.height(8.dp))
 
