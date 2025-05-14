@@ -10,4 +10,5 @@ sealed class Screen(val route: String){
     object MostrarSolicitud: Screen("MostrarSolicitud")
     object CrearSolicitud: Screen("CrearSolicitud")
     object MostrarDocumento: Screen("MostrarDocumento")
+    object AdminSolicitud: Screen("AdminSolicitud")
 }

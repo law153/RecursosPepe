@@ -30,7 +30,8 @@ import com.recursospepe.tutorial.Funciones.BotonFlotante
 
 @Composable
 fun SolicitudesScreen(navigateToMostrarSolicitudScreen: () -> Unit,
-                      navigateToCrearSolicitudScreen: () -> Unit){
+                      navigateToCrearSolicitudScreen: () -> Unit,
+                      navigateToAdminSolicitudScreen: () -> Unit){
     var searchText by remember { mutableStateOf("") }
     var showSearchBar by remember { mutableStateOf(true) }
 
