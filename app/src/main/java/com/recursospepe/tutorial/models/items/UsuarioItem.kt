@@ -1,4 +1,4 @@
-package com.recursospepe.tutorial.models
+package com.recursospepe.tutorial.models.items
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,10 +14,9 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.recursospepe.tutorial.Funciones.BotonDescargar
+import com.recursospepe.tutorial.models.dataclass.UsuarioDataClass
 
 @Composable
 fun UsuarioItem(usuario: UsuarioDataClass) {

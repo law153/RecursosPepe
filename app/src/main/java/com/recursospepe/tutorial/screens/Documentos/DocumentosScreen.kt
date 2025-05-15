@@ -17,16 +17,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.recursospepe.tutorial.Funciones.BotonDescargar
-import com.recursospepe.tutorial.Funciones.BotonFlotante
-import com.recursospepe.tutorial.models.DocumentoDataClass
-import com.recursospepe.tutorial.models.DocumentoItem
-import com.recursospepe.tutorial.models.UsuarioDataClass
-import com.recursospepe.tutorial.models.UsuarioItem
+import com.recursospepe.tutorial.models.dataclass.DocumentoDataClass
+import com.recursospepe.tutorial.models.items.DocumentoItem
+import com.recursospepe.tutorial.models.dataclass.UsuarioDataClass
 import com.recursospepe.tutorial.screens.Index.DocumentosList
 
 @Composable

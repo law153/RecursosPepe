@@ -5,7 +5,7 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Settings
-import com.recursospepe.tutorial.models.navItem
+import com.recursospepe.tutorial.models.dataclass.navItem
 
 object NavItemList {
     val NavItemList = listOf(

@@ -25,7 +25,14 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun CustomCard(texto: String, textStyle: TextStyle, label: String, archivosAdjuntos: List<String>? = null){
+fun CustomCard(texto: String, //NOMBRE / ASUNTO
+               textStyle: TextStyle, // Estilo de texto
+               label: String? = null, // Descripcion (opcional)
+               archivosAdjuntos: List<String>? = null, // Archivos adjuntos (opcional)
+               foto: Boolean? = false, //Foto (ICONO PERSON) (opcional)
+               tipoSolicitud: String? = null,
+               estadoSolicitud: String? = null)
+{
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -44,14 +51,17 @@ fun CustomCard(texto: String, textStyle: TextStyle, label: String, archivosAdjun
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Text(
-                    text = label,
-                    style = MaterialTheme.typography.labelMedium
-                )
+            //Descripcion si es que se necesita
+            if (!label.isNullOrEmpty()){
+                Row(
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        text = label,
+                        style = MaterialTheme.typography.labelMedium
+                    )
+                }
             }
 
             //Mostrar archivos adjuntos, si es que los hay

@@ -1,4 +1,4 @@
-package com.recursospepe.tutorial.models
+package com.recursospepe.tutorial.models.dataclass
 
 class UsuarioDataClass (
     val idUsuario: Int,

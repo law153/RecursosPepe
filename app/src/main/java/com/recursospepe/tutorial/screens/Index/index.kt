@@ -27,11 +27,8 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import com.recursospepe.tutorial.models.DocumentoDataClass
-import com.recursospepe.tutorial.models.DocumentoItem
-import com.recursospepe.tutorial.models.SolicitudDataClass
-import com.recursospepe.tutorial.models.SolicitudItem
-import com.recursospepe.tutorial.screens.Solicitudes.SolicitudesList
+import com.recursospepe.tutorial.models.dataclass.DocumentoDataClass
+import com.recursospepe.tutorial.models.items.DocumentoItem
 
 
 @Composable

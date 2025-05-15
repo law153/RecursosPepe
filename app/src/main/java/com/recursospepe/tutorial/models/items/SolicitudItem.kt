@@ -1,4 +1,4 @@
-package com.recursospepe.tutorial.models
+package com.recursospepe.tutorial.models.items
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.recursospepe.tutorial.models.dataclass.SolicitudDataClass
 
 @Composable
 fun SolicitudItem(solicitud: SolicitudDataClass, navigateToMostrarSolicitud: () -> Unit) {

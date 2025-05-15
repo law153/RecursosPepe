@@ -19,11 +19,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.recursospepe.tutorial.models.DocumentoDataClass
-import com.recursospepe.tutorial.models.DocumentoItem
-import com.recursospepe.tutorial.models.UsuarioDataClass
-import com.recursospepe.tutorial.models.UsuarioItem
-import com.recursospepe.tutorial.screens.Index.DocumentosList
+import com.recursospepe.tutorial.models.dataclass.UsuarioDataClass
+import com.recursospepe.tutorial.models.items.UsuarioItem
 
 @Composable
 fun MostrarDocumentoScreen(){
