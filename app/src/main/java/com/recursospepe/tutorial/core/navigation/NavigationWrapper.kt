@@ -142,7 +142,9 @@ fun NavigationWrapper(){
             //ADMIN SOLICITUD
 
             composable(Screen.AdminSolicitud.route){
-                AdminSolicitudScreen()
+                AdminSolicitudScreen(navigateToSolicitudesScreen = {
+                    navController.navigate(Screen.Solicutdes.route)
+                })
             }
 
         }

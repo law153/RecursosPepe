@@ -9,9 +9,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,7 +33,8 @@ import com.recursospepe.tutorial.Funciones.BotonFlotante
 @Composable
 fun SolicitudesScreen(navigateToMostrarSolicitudScreen: () -> Unit,
                       navigateToCrearSolicitudScreen: () -> Unit,
-                      navigateToAdminSolicitudScreen: () -> Unit){
+                      navigateToAdminSolicitudScreen: () -> Unit)
+{
     var searchText by remember { mutableStateOf("") }
     var showSearchBar by remember { mutableStateOf(true) }
 
@@ -73,6 +76,17 @@ fun SolicitudesScreen(navigateToMostrarSolicitudScreen: () -> Unit,
             SolicitudDataClass("Solicitud de vacaciones", "Solicito vacaciones desde el 10 al 25 de mayo.", "Rechazada", "18-04-2025")
         )
         SolicitudesList(solicitudes, navigateToMostrarSolicitudScreen)
+
+
+        //NAVEGAR A ADMIN
+        Button(onClick = {
+                navigateToAdminSolicitudScreen()
+                },
+            modifier = Modifier.fillMaxWidth()
+            ) {
+            Text("Navegar a Admin")
+        }
+
     }
 }
 
