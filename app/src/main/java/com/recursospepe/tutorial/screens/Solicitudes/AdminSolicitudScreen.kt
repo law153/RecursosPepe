@@ -50,7 +50,7 @@ fun AdminSolicitudScreen(navigateToSolicitudesScreen: () -> Unit,
             horizontalArrangement = Arrangement.Center
         )
         {
-            Text(text = "Tus solicitudes",
+            Text(text = "Solicitudes",
                 fontSize = 20.sp,
                 modifier = Modifier.padding(all = 8.dp))
         }
