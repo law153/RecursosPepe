@@ -21,7 +21,8 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun LoginScreen(navigateToIndex: () -> Unit){
+fun LoginScreen(navigateToIndex: () -> Unit,
+                navigateToCambiarclave: () -> Unit){
     var user by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -47,8 +48,11 @@ fun LoginScreen(navigateToIndex: () -> Unit){
             modifier = Modifier.fillMaxWidth()
         )
 
-        Text(text ="¿Olvidaste tu contraseña?",
+
+        Button(onClick = { navigateToCambiarclave() }) {
+            Text(text ="¿Olvidaste tu contraseña?",
             color = MaterialTheme.colorScheme.onBackground)
+        }
 
 
         // Boton de inicio

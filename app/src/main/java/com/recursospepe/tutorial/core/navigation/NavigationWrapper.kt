@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.recursospepe.tutorial.CrearCuentaScreen
+import com.recursospepe.tutorial.screens.Configuracion.CambiarClaveScreen
 import com.recursospepe.tutorial.screens.Configuracion.ConfiguracionScreen
 import com.recursospepe.tutorial.screens.Documentos.DocumentosScreen
 import com.recursospepe.tutorial.screens.Documentos.MostrarDocumentoScreen
@@ -71,7 +72,10 @@ fun NavigationWrapper(){
             composable(Screen.Login.route) {
                 LoginScreen(navigateToIndex = {
                     navController.navigate(Screen.Index.route)
-                })
+                },
+                    navigateToCambiarclave = {
+                        navController.navigate(Screen.CambiarClave.route)
+                    })
             }
 
             //INDEX
@@ -156,6 +160,12 @@ fun NavigationWrapper(){
 
             composable(Screen.MostrarAdminSolicitud.route){
                 AdminMostrarSolicitudScreen()
+            }
+
+
+            //CAMBIAR CLAVE
+            composable(Screen.CambiarClave.route){
+                CambiarClaveScreen()
             }
 
         }
