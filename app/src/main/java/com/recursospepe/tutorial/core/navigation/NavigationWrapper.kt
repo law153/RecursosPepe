@@ -108,7 +108,7 @@ fun NavigationWrapper(){
                 } )
             }
             composable(Screen.MostrarDocumento.route) {
-                MostrarDocumentoScreen()
+                MostrarDocumentoScreen(navController = navController)
             }
 
 
